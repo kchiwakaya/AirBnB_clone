@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
-# Sets up a web server for deployment of web_static.
+# script to set up a web server for deployment of web_static.
 
 apt-get update
 apt-get install -y nginx
 
+# create directory if it does not exist
 mkdir -p /data/web_static/releases/test/
+# create directory if it does not exist
 mkdir -p /data/web_static/shared/
+# Write text is html file
 echo "Holberton School" > /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
+#change owner
 
 chown -R ubuntu /data/
 chgrp -R ubuntu /data/
